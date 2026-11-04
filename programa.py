@@ -24,3 +24,23 @@ for nome in navios:
             else:
                 print('Esta posição não está válida!')
 print(frota)
+
+def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
+    texto = ''
+    texto += '   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9\n'
+    texto += '_______________________________      _______________________________\n'
+    for linha in range(10):
+        jogador_info = ''
+        oponente_info = ''
+        for coluna in range(10):
+            if coluna > 0:
+                jogador_info += '  '
+                oponente_info += '  '
+            jogador_info += str(tabuleiro_jogador[linha][coluna])
+            info = tabuleiro_oponente[linha][coluna]
+            if info == 'X' or info == '-':
+                oponente_info += info
+            else:
+                oponente_info += '0'
+        texto += f'{linha}| {jogador_info}|     {linha}| {oponente_info}|\n'
+    return texto
