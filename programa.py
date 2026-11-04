@@ -1,3 +1,4 @@
+import random
 from funcoes import define_posicoes, preenche_frota, faz_jogada, posiciona_frota, afundados, posicao_valida
 frota = {}
 navios = {'porta-aviões': [4, 1], 'navio-tanque': [3, 2], 'contratorpedeiro': [2, 3], 'submarino': [1, 4]}
@@ -68,6 +69,7 @@ total_navios = 0
 for nome in frota_oponente:
     total_navios += len(frota_oponente[nome])
 posicoes_informadas = []
+posicoes_oponente = []
 jogando = True
 while jogando:
     print(monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente))
@@ -90,8 +92,7 @@ while jogando:
     if afundados(frota_oponente, tabuleiro_oponente) == total_navios:
         print('Parabéns! Você derrubou todos os navios do seu oponente!')
         jogando = False
-
-            else:
+    else:
         ataque_oponente_valido = False
         while not ataque_oponente_valido:
             linha_oponente = random.randint(0, 9)
