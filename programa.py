@@ -104,4 +104,4 @@ while jogando:
         tabuleiro_jogador = faz_jogada(tabuleiro_jogador, linha_oponente, coluna_oponente)
         if afundados(frota, tabuleiro_jogador) == total_navios:
             print('Xi! O oponente derrubou toda a sua frota =(')
-            jogando = False
+            jogando = False  
