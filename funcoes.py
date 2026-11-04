@@ -60,7 +60,7 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
     for i in range(tamanho):
         if orientacao == 'vertical':
             posicoes.append([linha + i, coluna])
-        else:  
+        else:
             posicoes.append([linha, coluna + i])
     return posicoes
 def posicao_valida(frota, linha, coluna, orientacao, tamanho):
